@@ -1,0 +1,29 @@
+@model Locatie
+
+@{
+    ViewData["Title"] = "Details";}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Locatie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Stad
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Stad
+        </dd>
+        <dt class="col-sm-2">
+            Land
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LandId
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.LocatieId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

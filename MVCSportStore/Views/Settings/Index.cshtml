@@ -1,0 +1,21 @@
+@model PagingSettingsViewModel
+@{
+    ViewData["Title"] = "Paging settings";
+}
+
+<h2>Paging settings</h2>
+
+<form asp-controller="Settings" asp-action="Index" method="post" class="col-md-4">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="ProductPagination" class="form-label"></label>
+        <input asp-for="ProductPagination" class="form-control" />
+        <span asp-validation-for="ProductPagination" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Opslaan</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Annuleren</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

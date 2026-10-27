@@ -1,0 +1,29 @@
+@model ProductModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+@foreach (var p in Model.Products)
+{
+    <div>
+        <h3>@p.Name</h3>
+        @p.Description
+        <h4>
+            @p.Price.ToString("c")
+        </h4>
+    </div>
+}
+
+@if (Model.PagingInfo.TotalPages > 1)
+{
+    <nav aria-label="Product pagina's">
+        <ul class="pagination mt-3">
+            @for (int i = 1; i <= Model.PagingInfo.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PagingInfo.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-productPage="@i">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
