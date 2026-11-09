@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVCVoertuig</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    @* Stap 11 - Styling (header/nav uit de opgave)
+       In de opgave staat voor "Voertuigen":  class="link-warning"
+       Op de screenshots (stap 13/14) zijn alle menu-items knoppen -> btn btn-info *@
+    <header>
+        <nav class="navbar navbar-expand-sm bg-primary navbar-light">
+            <a class="btn btn-info m-1" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="btn btn-info m-1" asp-controller="Voertuig" asp-action="Index">Voertuigen</a>
+
+            @* Stap 14 - ViewComponent met alle unieke merken *@
+            @await Component.InvokeAsync("HeaderMenu")
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; PXL - MVCVoertuig
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,54 @@
+@model Voertuig
+@{
+    ViewData["Title"] = "Nieuw voertuig";
+}
+
+<h1 class="mt-3">Nieuw voertuig</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-2">
+                <label asp-for="Merk" class="control-label"></label>
+                <input asp-for="Merk" class="form-control" />
+                <span asp-validation-for="Merk" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="MerkType" class="control-label"></label>
+                <input asp-for="MerkType" class="form-control" />
+                <span asp-validation-for="MerkType" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="Bouwjaar" class="control-label"></label>
+                <input asp-for="Bouwjaar" class="form-control" />
+                <span asp-validation-for="Bouwjaar" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="Km" class="control-label"></label>
+                <input asp-for="Km" class="form-control" />
+                <span asp-validation-for="Km" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="VerkoopPrijs" class="control-label"></label>
+                <input asp-for="VerkoopPrijs" class="form-control" />
+                <span asp-validation-for="VerkoopPrijs" class="text-danger"></span>
+            </div>
+            <div class="form-check mb-3">
+                <input asp-for="AanwezigInShowroom" class="form-check-input" />
+                <label asp-for="AanwezigInShowroom" class="form-check-label"></label>
+            </div>
+
+            <input type="submit" value="Opslaan" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+<div class="mt-2">
+    <a asp-action="Index">Terug naar overzicht</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,8 @@
+@* Stap 14 - View van HeaderMenuViewComponent
+   Locatie MOET zijn: Views/Shared/Components/<NaamZonderViewComponent>/Default.cshtml *@
+@model IEnumerable<string>
+
+@foreach (var merk in Model)
+{
+    <a class="btn btn-info m-1" asp-controller="Voertuig" asp-action="Index" asp-route-merk="@merk">@merk</a>
+}

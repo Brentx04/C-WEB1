@@ -1,0 +1,18 @@
+@model IEnumerable<Voertuig>
+@{
+    ViewData["Title"] = "Voertuigen";
+}
+
+<h1 class="mt-3">Voertuigen @ViewBag.Merk</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Nieuw voertuig</a>
+</p>
+
+<car-info aantal="@Model.Count()"></car-info>
+
+@* Stap 12 - voor elk voertuig de partial view tonen *@
+@foreach (var voertuig in Model)
+{
+    <partial name="_VoertuigCard" model="voertuig" />
+}

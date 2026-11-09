@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+@* Stap 13 - CarInfoTagHelper: <car-info> wordt door de TagHelper omgezet naar een knop met badge *@
+<div class="text-center">
+    <car-info aantal="@ViewBag.AantalVoertuigen"></car-info>
+    <br />
+    <car-info aantal="@ViewBag.AantalInShowroom" tekst="Aantal voertuigen in showroom"></car-info>
+</div>
