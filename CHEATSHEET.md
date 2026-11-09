@@ -23,6 +23,7 @@ De PE heeft waarschijnlijk dezelfde stappen, maar met een ander onderwerp. Kopie
 
 ## 1. NuGet-packages
 Rechtsklik op het project → **Manage NuGet Packages** → tab *Browse* → installeer (versie 10.x):
+
 - `Microsoft.EntityFrameworkCore.SqlServer`
 - `Microsoft.EntityFrameworkCore.Tools`
 
@@ -314,6 +315,7 @@ namespace MVCVoertuig.Controllers
 
 ### Views genereren (snelste manier)
 Rechtsklik in de methode `Index()` → **Add View** → *Razor View* →
+
 - View name `Index`, Template **List**, Model class **Voertuig** → Add
 - Doe hetzelfde voor `Create()` met Template **Create**.
 
@@ -841,6 +843,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 | Rode lijnen onder klassen | `using` ontbreekt: Ctrl + . op de rode lijn → kies de using |
 
 ## 19. Checklist voor het indienen
+
 - [ ] Packages (2) geïnstalleerd
 - [ ] DbContext + DbSet
 - [ ] Connection string (juiste naam + databanknaam)
