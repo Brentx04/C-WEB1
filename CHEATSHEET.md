@@ -2,6 +2,35 @@
 
 Volledig werkend voorbeeld: map `MVCVoertuig/` in deze repo. Elke stap hieronder bevat de **volledige code** om te kopiëren.
 
+## ⏱️ Tijdsplan: 60 minuten
+| Tijd | Doen | Stappen |
+|---|---|---|
+| 0 – 3 | Project aanmaken + packages (plak ze in de .csproj, zie stap 1) | 1 |
+| 3 – 15 | Model, custom validatie, DbContext, appsettings, Program.cs (**kopiëren + namen vervangen**) | 5, 6, 2, 3, 4 |
+| 15 – 20 | Seed data, `Add-Migration initial`, `Update-Database` → **F5: start de app?** | 10, 9 |
+| 20 – 30 | Controller + Index/Create-views (Add View met template) → **F5 en test Create** | 7, 8 |
+| 30 – 35 | Layout | 11 |
+| 35 – 40 | Partial view + gebruiken in Index | 12 |
+| 40 – 47 | TagHelper + `@addTagHelper` | 13 |
+| 47 – 55 | ViewComponent + Default.cshtml | 14 |
+| 55 – 60 | Testen, opslaan, indienen | |
+
+**Regels tijdens de PE**
+
+1. **Kopieer volledige bestanden** en vervang daarna de namen met Ctrl+H. Overtypen kost te veel tijd.
+2. **Zit je meer dan 5 minuten vast? Ga door naar de volgende stap.** Je komt er op het einde op terug. Stap 11–14 hangen bijna niet af van elkaar.
+3. Druk na elk blok op **Ctrl+Shift+B** (bouwen). Fouten die je meteen ziet, los je in 1 minuut op. Na 20 minuten duurt dat veel langer.
+4. Bouwt iets niet en heb je geen tijd meer? **Zet die code in commentaar** (selecteer → Ctrl+K, Ctrl+C), zodat de rest van het project wel bouwt en draait.
+5. Vanaf minuut 55 schrijf je geen nieuwe code meer. Test dan en dien in.
+
+**Vanavond voorbereiden (belangrijk!)**
+
+- [ ] Download deze PDF **lokaal**, zodat je er zonder internet aan kunt.
+- [ ] Bouw de oefening één keer helemaal met alleen deze cheatsheet en **meet je tijd**.
+- [ ] Controleer of LocalDB werkt op je laptop: doe `Update-Database` en F5 in een project.
+- [ ] Vraag (of check) of je tijdens de PE **je eigen projecten** mag openen. Mag dat, open dan `MVCVoertuig` en kopieer hele bestanden: dat is het snelst.
+- [ ] Is er tijdens de PE geen internet? Dan werkt NuGet *Browse* niet, maar het plakken van de packages in de `.csproj` (stap 1) wel. Ze komen dan uit de cache, op voorwaarde dat je die versie al eens geïnstalleerd hebt (bv. vanavond).
+
 ## 0. Eerst: namen vervangen
 De PE heeft waarschijnlijk dezelfde stappen, maar met een ander onderwerp. Kopieer de code en doe in Visual Studio **Ctrl+H** (Replace, *Match case* AAN). Vervang daarbij **eerst het meervoud, dan het enkelvoud**.
 
@@ -28,6 +57,18 @@ Rechtsklik op het project → **Manage NuGet Packages** → tab *Browse* → ins
 - `Microsoft.EntityFrameworkCore.Tools`
 
 Klopt het? Dubbelklik op het project; in de `.csproj` staan dan 2 `<PackageReference>`-regels.
+
+**⚡ Sneller (en werkt ook offline):** dubbelklik op het project (de `.csproj` opent) en plak dit **binnen** `<Project>`, onder `</PropertyGroup>`. Sla op; Visual Studio herstelt de packages dan zelf.
+```xml
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+```
+Stopt `Add-Migration` met een waarschuwing over kwetsbare packages (NU1903)? Zet dan in de `<PropertyGroup>` de regel `<NuGetAuditMode>direct</NuGetAuditMode>`. Dat is hetzelfde als in je MVCSportStore-project.
 
 ---
 
