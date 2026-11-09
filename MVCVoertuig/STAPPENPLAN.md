@@ -1,4 +1,4 @@
-# MVCVoertuig – stappenplan voor de PE
+# Oefening 15 - MVCVoertuig - Voorbeeld PE: stappenplan
 
 Het volledige project staat in deze map. Leer het in de volgorde hieronder: dat is ook de volgorde waarin je het in de PE bouwt.
 

@@ -1,6 +1,6 @@
 # Cheatsheet PE – MVC + Entity Framework (.NET 10)
 
-Volledig werkend voorbeeld: map `MVCVoertuig/` in deze repo. Elke stap hieronder bevat de **volledige code** om te kopiëren.
+Gebaseerd op **Oefening 15 - MVCVoertuig - Voorbeeld PE**. De volledig werkende oplossing staat in de map `MVCVoertuig/` van deze repo. Elke stap hieronder bevat de **volledige code** om te kopiëren.
 
 ## ⏱️ Tijdsplan: 60 minuten
 | Tijd | Doen | Stappen |
