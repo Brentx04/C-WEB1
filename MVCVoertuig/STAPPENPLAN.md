@@ -8,6 +8,7 @@ Het volledige project staat in deze map. Leer het in de volgorde hieronder: dat 
 
 ## 1. NuGet-packages
 Klik rechts op het project → *Manage NuGet Packages* → Browse. Installeer:
+
 - `Microsoft.EntityFrameworkCore.SqlServer` voor de verbinding met SQL Server
 - `Microsoft.EntityFrameworkCore.Tools` voor `Add-Migration` en `Update-Database`
 
@@ -131,6 +132,7 @@ SeedData.EnsurePopulated(app);
 Vervang de `<header>`, de container en de `<footer>` door de code uit de opgave. Laat de `<head>` en de `<script>`-tags staan, want anders werken Bootstrap en de validatie niet meer.
 
 ## 12. Partial View → `Views/Shared/_VoertuigCard.cshtml`
+
 - Bovenaan zet je `@model Voertuig`, daaronder de card-HTML uit de opgave.
 - De naam begint volgens de afspraak met `_`.
 - Gebruik in `Voertuig/Index.cshtml`:
@@ -198,6 +200,7 @@ public class HeaderMenuViewComponent : ViewComponent
 | **ViewComponent** | mini-controller met een eigen view | ja: DI van de DbContext, haalt zelf data op |
 
 ## Checklist op het einde
+
 - [ ] Bouwt het project? (Ctrl+Shift+B)
 - [ ] Is `Add-Migration` + `Update-Database` gedaan?
 - [ ] Staat de default data er na het opstarten?
